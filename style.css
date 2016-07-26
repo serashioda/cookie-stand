@@ -1,0 +1,65 @@
+
+h1 {
+  font-family: 'Tangerine', serif;
+  font-weight: bolder;
+  color: #F44336;
+}
+
+h2 {
+  font-family: 'Tangerine', serif;
+  font-weight: bolder;
+}
+
+#salmon {
+  font-family: 'Tangerine', serif;
+  font-weight: bolder;
+  font-size: 50px;
+  color: #F44336;
+}
+#firstPike {
+  font-family: 'Tangerine', serif;
+  font-weight: bold;
+  color: #D50000;
+}
+
+#seaTac {
+  font-family: 'Tangerine', serif;
+  font-weight: bold;
+  color: #E53935;
+}
+
+#seattleCenter {
+  font-family: 'Tangerine', serif;
+  font-weight: bold;
+  color: #EF5350;
+}
+
+#capitalHill {
+  font-family: 'Tangerine', serif;
+  font-weight: bold;
+  color: #E57373;
+}
+
+#alki {
+  font-family: 'Tangerine', serif;
+  font-weight: bold;
+  color: #EF9A9A;
+}
+
+.render {
+   font-family: Verdana, serif, sans-serif;
+   font-weight: bold;
+   color:
+}
+
+/*p {
+font-family: Helvetica, sans-serif, serif;
+color: #B2DFDB;
+}*/
+
+background {
+  color: #F3E5F5;
+
+  /*image {
+  url: ("https://github.com/codefellows/seattle-201d11/raw/master/class-06-dom-objects-domain_modeling/lab/assets/salmon.png");
+  }*/
