@@ -47,6 +47,13 @@ for (var i = 0; i < firstAndPike.cookiesEachHourArray.length; i++) {
   listElement.textContent = hours[i] + ': ' + firstAndPike.cookiesEachHourArray[i] + ' cookies';
   firstAndPikeUl.appendChild(listElement);
 }
+
+var listElement = document.createElement('li');
+listElement.textContent = 'Total: ' + firstAndPike.totalDailyCookieSales + ' cookies';
+firstAndPikeUl.appendChild(listElement);
+
+
+
 document.body.appendChild(firstAndPikeUl);
 
 
