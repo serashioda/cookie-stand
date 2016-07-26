@@ -15,7 +15,34 @@ h2 {
   font-weight: bolder;
   font-size: 50px;
   color: #F44336;
+  float: top-center;
+  max-width: 750px;
+  height: 0 auto;
+  padding: 5px;
+  margin: 5px;
+  border: 5px solid black;
+  border-radius: 25px;
+  margin: 0 auto;
+  background-color: #F0F4C3;
+  text-align: center;
 }
+
+#footer {
+  font-weight: lighter;;
+  font-size: 15px;
+  color: #E0F7FA;
+  float: center;
+  max-width: 1000px;
+  height: 0 auto;
+  padding: 5px;
+  margin: 5px;
+  border: 5px solid black;
+  border-radius: 25px;
+  margin: 0 auto;
+  background-color: #0097A7;
+  text-align: center;
+}
+
 #firstPike {
   font-family: 'Tangerine', serif;
   font-weight: bold;
@@ -52,14 +79,11 @@ h2 {
    color:
 }
 
-/*p {
+p {
 font-family: Helvetica, sans-serif, serif;
 color: #B2DFDB;
-}*/
+}
 
-background {
-  color: #F3E5F5;
-
-  /*image {
-  url: ("https://github.com/codefellows/seattle-201d11/raw/master/class-06-dom-objects-domain_modeling/lab/assets/salmon.png");
-  }*/
+body {
+  background-color: #F3E5F5;
+}
