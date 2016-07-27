@@ -1,0 +1,102 @@
+table, td {
+	border: 1px solid black;
+}
+
+td {
+	padding: 10px;
+	border-radius: 5px;
+}
+
+th {
+	background-color: navy;
+	color: white;
+
+h1 {
+  font-family: 'Tangerine', serif;
+  font-weight: bolder;
+  color: #F44336;
+}
+
+#storeloc {
+  font-family: Georgia, Times, sans-serif;
+  float: top-center;
+  font-weight: bolder;
+  font-size: 10px;
+  color: #E57373;
+  background-color: #FFB74D;
+  max-width: 25%;
+  max-height: 10%;
+  border: 1px solid white;
+  border-radius: 15px;
+}
+
+#store {
+  font-family: 'Tangerine', serif;
+  font-weight: bolder;
+  font-size: 50px;
+  color: #F44336;
+  float: top-right;
+  max-width: 750px;
+  height: 0 auto;
+  margin-left: 400px;
+  border: 5px solid black;
+  border-radius: 25px;
+  background-color: #F0F4C3;
+  text-align: center;
+}
+
+img {
+  max-width: 750px;
+  max-height: 350px;
+  margin-left: 20%;
+  margin-bottom: 5%;
+}
+
+#footer {
+  font-weight: lighter;
+  font-size: 15px;
+  color: #E0F7FA;
+  float: center;
+  max-width: 1000px;
+  height: 0 auto;
+  margin: 5px;
+  border: 5px solid black;
+  border-radius: 25px;
+  margin: 0 auto;
+  background-color: #0097A7;
+  text-align: center;
+}
+
+#sales {
+  font-family: Georgia, Times, sans-serif;
+  float: top-center;
+  color: blue;
+  font-weight: bolder;
+  font-size: 10px;
+  color: #E57373;
+}
+#locationjs {
+  font-family: Helvetica, sans-serif, serif;
+  color: blue;
+}
+
+#projected {
+  font-family: Courier, Times, serif;
+  font-size: 50px;
+  font-weight: bold;
+  color: blue;
+}
+
+.render {
+   font-family: Verdana, serif, sans-serif;
+   font-weight: bold;
+}
+
+/*p {
+font-family: Helvetica, sans-serif, serif;
+color: #B2DFDB;
+}*/
+
+body {
+  background-color: #F3E5F5;
+}
