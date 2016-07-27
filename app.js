@@ -125,6 +125,5 @@ function makeAllLocationRows() {
     locationTable.appendChild(tableRow);
   }
 }
-
 makeAllTimesColumns();
 makeAllLocationRows();
