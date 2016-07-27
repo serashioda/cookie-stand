@@ -12,11 +12,14 @@ function Location(locationName, minCustPerHour, maxCustPerHour, avgCookiesPerCus
   this.minCustPerHour = minCustPerHour;
   this.maxCustPerHour = maxCustPerHour;
   this.avgCookiesPerCust = avgCookiesPerCust;
+//ARRAYS
   this.custEachHourArray = [];
   this.cookiesEachHourArray = [];
   this.totalDailyCookieSales = 0;
+
   allLocations.push(this);
 
+}
 //METHODS; USE RANDOM GENERATOR TO CALC CUST EACH HOUR
 this.calcCustEachHour = function() {
 //FOR LOOP
@@ -138,3 +141,4 @@ function makeAllLocationRows() {
 //CALLING COLUMNS AND ROWS
 makeAllTimesColumns();
 makeAllLocationRows();
+makeTotalRows();

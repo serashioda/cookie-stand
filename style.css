@@ -1,3 +1,15 @@
+table, td {
+	border: 1px solid black;
+}
+
+td {
+	padding: 10px;
+	border-radius: 5px;
+}
+
+th {
+	background-color: navy;
+	color: white;
 
 h1 {
   font-family: 'Tangerine', serif;
