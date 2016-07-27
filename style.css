@@ -10,7 +10,7 @@ h2 {
   font-weight: bolder;
 }
 
-#salmon {
+#store {
   font-family: 'Tangerine', serif;
   font-weight: bolder;
   font-size: 50px;
@@ -25,6 +25,14 @@ h2 {
   margin: 0 auto;
   background-color: #F0F4C3;
   text-align: center;
+}
+
+img {
+  padding-bottom: 5px;
+  max-width: 750px;
+  max-height: 350px;
+  margin-left: 20%;
+  margin-bottom: 5%;
 }
 
 #footer {
