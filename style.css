@@ -5,9 +5,17 @@ h1 {
   color: #F44336;
 }
 
-h2 {
-  font-family: 'Tangerine', serif;
+#storeloc {
+  font-family: Georgia, Times, sans-serif;
+  float: top-center;
   font-weight: bolder;
+  font-size: 10px;
+  color: #E57373;
+  background-color: #FFB74D;
+  max-width: 25%;
+  max-height: 10%;
+  border: 1px solid white;
+  border-radius: 15px;
 }
 
 #store {
@@ -15,20 +23,17 @@ h2 {
   font-weight: bolder;
   font-size: 50px;
   color: #F44336;
-  float: top-center;
+  float: top-right;
   max-width: 750px;
   height: 0 auto;
-  padding: 5px;
-  margin: 5px;
+  margin-left: 400px;
   border: 5px solid black;
   border-radius: 25px;
-  margin: 0 auto;
   background-color: #F0F4C3;
   text-align: center;
 }
 
 img {
-  padding-bottom: 5px;
   max-width: 750px;
   max-height: 350px;
   margin-left: 20%;
@@ -36,13 +41,12 @@ img {
 }
 
 #footer {
-  font-weight: lighter;;
+  font-weight: lighter;
   font-size: 15px;
   color: #E0F7FA;
   float: center;
   max-width: 1000px;
   height: 0 auto;
-  padding: 5px;
   margin: 5px;
   border: 5px solid black;
   border-radius: 25px;
@@ -51,46 +55,35 @@ img {
   text-align: center;
 }
 
-#firstPike {
-  font-family: 'Tangerine', serif;
-  font-weight: bold;
-  color: #D50000;
-}
-
-#seaTac {
-  font-family: 'Tangerine', serif;
-  font-weight: bold;
-  color: #E53935;
-}
-
-#seattleCenter {
-  font-family: 'Tangerine', serif;
-  font-weight: bold;
-  color: #EF5350;
-}
-
-#capitalHill {
-  font-family: 'Tangerine', serif;
-  font-weight: bold;
+#sales {
+  font-family: Georgia, Times, sans-serif;
+  float: top-center;
+  color: blue;
+  font-weight: bolder;
+  font-size: 10px;
   color: #E57373;
 }
+#locationjs {
+  font-family: Helvetica, sans-serif, serif;
+  color: blue;
+}
 
-#alki {
-  font-family: 'Tangerine', serif;
+#projected {
+  font-family: Courier, Times, serif;
+  font-size: 50px;
   font-weight: bold;
-  color: #EF9A9A;
+  color: blue;
 }
 
 .render {
    font-family: Verdana, serif, sans-serif;
    font-weight: bold;
-   color:
 }
 
-p {
+/*p {
 font-family: Helvetica, sans-serif, serif;
 color: #B2DFDB;
-}
+}*/
 
 body {
   background-color: #F3E5F5;
