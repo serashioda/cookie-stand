@@ -1,9 +1,14 @@
-// Master of JS
+// MASTER OF JS; collaborated w/ Lee & Adrian
 'use strict';
 
+//GOLBAL VARIABLES
 var hours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm'];
 
 var allLocations = [];
+
+var locationTable = document.getElementById('locationTable');
+var salesInput = document.getElementById('salesInput');
+var clearTable = document.getElementsByClassName('sumbit');
 
 //OBJECT CONSTRUCTOR
 function Location(locationName, minCustPerHour, maxCustPerHour, avgCookiesPerCust) {
@@ -18,10 +23,10 @@ function Location(locationName, minCustPerHour, maxCustPerHour, avgCookiesPerCus
   this.totalDailyCookieSales = 0;
 
   allLocations.push(this);
+};
 
-}
 //METHODS; USE RANDOM GENERATOR TO CALC CUST EACH HOUR
-this.calcCustEachHour = function() {
+this.prototype.calcCustEachHour = function() {
 //FOR LOOP
     for (var i = 0; i < hours.length; i++) {
       var singleHourCust = Math.floor(Math.random() * (this.maxCustPerHour - this.minCustPerHour + 1)) + this.minCustPerHour;
@@ -30,8 +35,9 @@ this.calcCustEachHour = function() {
   };
 
 // USE PREV FUNCTION OUTPUT TO CALC # OF COOKIES SOLD EACH HOUR; USE .CEIL TO ROUND UP FOR WHOLE COOKIES
-  this.calcCookiesEachHour = function() {
+  this.prototype.calcCookiesEachHour = function() {
     this.calcCustEachHour();
+//FORLOOP
     for (var i = 0; i < hours.length; i++) {
       var singleHourCookies = Math.ceil(this.custEachHourArray[i] * this.avgCookiesPerCust);
       this.cookiesEachHourArray.push(singleHourCookies);
@@ -39,23 +45,23 @@ this.calcCustEachHour = function() {
     }
   };
 
-// TAKE ARRAY AND DISPLAY OUTCOME FROM FUNCTION INTO UNORDERED LIST
+//TAKE ARRAY AND DISPLAY OUTCOME FROM FUNCTION INTO UNORDERED LIST
   this.render = function() {
     this.calcCookiesEachHour();
   };
 
   this.render();
-}
-// LOC AND FORLOOP
+};
+//STORE LOCATIONS
 var firstAndPike = new Location('1st and Pike','23','65','6.3');
 var seaTac = new Location('SeaTac Airport','3','24','12');
 var seattleCenter = new Location('Seattle Center','11','38','3.7');
 var capitalHill = new Location('Capital Hill','20','38','2.3');
 var alki = new Location('Alki','2','16','4.6');
-//
+//FORLOOP
 for (var i = 0; i < allLocations.length; i++) {
   console.log(allLocations[i].locationName);
-}
+};
 
 console.log(firstAndPike);
 console.log(seaTac);
@@ -63,6 +69,71 @@ console.log(seattleCenter);
 console.log(capitalHill);
 console.log(alki);
 
+// function dataInput(event) {
+//   event.preventDefault();
+//   console.log('Form button was clicked.');
+//
+//   if (!event.target.storeName.value || !event.target.minCustPerHour.value || !event.target.maxCustPerHour.value || !event.target.avgCookiesPerCust.value) {
+//     return alert('Fields cannot be empty!');
+//   }
+//
+//   // for (i = 0; i < allLocations.length; i++)
+//   //   if () {
+//   var storeName = event.target.storeName.value;
+//   console.log('Is this working? ' + storeName);
+//   var minCustPerHour = parseInt(event.target.minCustPerHour.value);
+//   console.log(typeof(minCustPerHour));
+//   console.log('Is this working? ' + minCustPerHour);
+//   var maxCustPerHour = parseInt(event.target.maxCustPerHour.value);
+//   console.log('Is this working? ' + maxCustPerHour);
+//   var avgCookiesPerCust = parseInt(event.target.avgCookiesPerCust.value);
+//   console.log('Is this working? ' + avgCookiesPerCust);
+//     // }
+//     //   else if {
+//     // }
+//
+//   function clearTable() {
+//     locationTable.innerHTML = '';
+//     console.log('You just cleared the table!');
+//   };
+//   clearTable();
+//
+//   var newStore = new Store(storeName, minCustPerHour, maxCustPerHour, avgCookiesPerCust);
+//   // console.log('Is this working well? ' + event.target.newStore.value);
+//
+//   event.target.storeName.value = null;
+//   event.target.minCustPerHour.value = null;
+//   event.target.maxCustPerHour.value = null;
+//   event.target.avgCookiesPerCust.value = null;
+//
+//   makeHeaderRow();
+//   renderAllStores();
+//   makeFooterRow();
+// }
+//
+// // allLocations.push(newStore);
+//
+// //
+// function makeHeaderRow() { //eslint-disable-line
+//   var tableRow = document.createElement('tr');
+//   var thElement = document.createElement('th');
+//   thElement.textContent = null;
+//   locationTable.appendChild(tableRow);
+//   tableRow.appendChild(thElement);
+//   for (var i = 0; i < hours.length; i++) {
+//     thElement = document.createElement('th');
+//     thElement.textContent = hours[i];
+//     tableRow.appendChild(thElement);
+//   }
+//   thElement = document.createElement('th');
+//   thElement.textContent = 'Location Total';
+//   tableRow.appendChild(thElement);
+//   console.log(locationTable);
+//   locationTable.appendChild(tableRow);
+// };
+
+
+//TABLE
 var locationTable = document.getElementById('locationjs');
 console.log('locationTable is', locationTable);
 // MAKE HEADER ROWS
@@ -97,11 +168,18 @@ function makeHeaderRow() {
 //<th>alki</th>
   var thElement = document.createElement('th');
   thElement.textContent = 'Alki';
-//append to th element(?)
+//append
   locationTable.appendChild(tableRow);
+  }
+//LOCATION TOTAL ROW
+thElement = document.createElement('th');
+thElement.textContent = 'Location Total';
+tableRow.appendChild(thElement);
+console.log(salmonTable);
+salmonTable.appendChild(tableRow);
 };
 
-//MAKE ALL TIMES COLUMNS
+/*//MAKE ALL TIMES COLUMNS
 function makeAllTimesColumns() {
   var tableRow = document.createElement('tr');
 
@@ -137,7 +215,29 @@ function makeAllLocationRows() {
 //APPEND TO TABLE ROW
     locationTable.appendChild(tableRow);
   }
+};*/
+
+function makeFooterRow() { //eslint-disable-line
+  var tableRow = document.createElement('tr');
+  tableRow.textContent = 'Totals';
+  salmonTable.appendChild(tableRow);
+  var bigTotal = 0;
+  for (var i = 0; i < hours.length; i++) {
+    var hourlyTotal = 0;
+    for (var j = 0; j < storeLocations.length; j++) {
+      hourlyTotal = hourlyTotal + storeLocations[j].averageCookiesPerHour[i];
+      bigTotal += storeLocations[j].averageCookiesPerHour[i];
+      console.log(bigTotal);
+    }
+    var tdElement = document.createElement('td');
+    tdElement.textContent = hourlyTotal;
+    tableRow.appendChild(tdElement);
+  }
+  tdElement = document.createElement('td');
+  tdElement.textContent = bigTotal;
+  tableRow.appendChild(tdElement);
 }
+
 //CALLING COLUMNS AND ROWS
 makeAllTimesColumns();
 makeAllLocationRows();
