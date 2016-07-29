@@ -137,6 +137,8 @@ color: #B2DFDB;
 
 body {
   background-color: #F3E5F5;
+	background-image: url("image/family.jpg");
+	opacity: 0.6;
 }
 
 sal
