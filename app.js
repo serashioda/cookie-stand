@@ -6,9 +6,8 @@ var hours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:0
 
 var allLocations = [];
 
-var locationTable = document.getElementById('locationTable');
-var salesInput = document.getElementById('salesInput');
-var clearTable = document.getElementsByClassName('sumbit');
+var salmonTable = document.getElementById('locationjs');
+var clearTable = document.getElementsByClassName('submit');
 
 //OBJECT CONSTRUCTOR
 function Location(locationName, minCustPerHour, maxCustPerHour, avgCookiesPerCust) {
@@ -19,14 +18,16 @@ function Location(locationName, minCustPerHour, maxCustPerHour, avgCookiesPerCus
   this.avgCookiesPerCust = avgCookiesPerCust;
 //ARRAYS
   this.custEachHourArray = [];
-  this.cookiesEachHourArray = [];
+  this.averageCookiesPerHour = [];
   this.totalDailyCookieSales = 0;
+  this.calcCustEachHour();
+  this.cookiesPerCustomer();
 
   allLocations.push(this);
 };
 
 //METHODS; USE RANDOM GENERATOR TO CALC CUST EACH HOUR
-this.prototype.calcCustEachHour = function() {
+Location.prototype.calcCustEachHour = function() {
 //FOR LOOP
     for (var i = 0; i < hours.length; i++) {
       var singleHourCust = Math.floor(Math.random() * (this.maxCustPerHour - this.minCustPerHour + 1)) + this.minCustPerHour;
@@ -34,23 +35,30 @@ this.prototype.calcCustEachHour = function() {
     }
   };
 
-// USE PREV FUNCTION OUTPUT TO CALC # OF COOKIES SOLD EACH HOUR; USE .CEIL TO ROUND UP FOR WHOLE COOKIES
-  this.prototype.calcCookiesEachHour = function() {
-    this.calcCustEachHour();
-//FORLOOP
+  Location.prototype.cookiesPerCustomer = function() {
     for (var i = 0; i < hours.length; i++) {
       var singleHourCookies = Math.ceil(this.custEachHourArray[i] * this.avgCookiesPerCust);
-      this.cookiesEachHourArray.push(singleHourCookies);
-      this.totalDailyCookieSales += singleHourCookies;
+      this.averageCookiesPerHour.push(singleHourCookies);
+      this.totalCookiesPerDay += singleHourCookies;
     }
   };
 
-//TAKE ARRAY AND DISPLAY OUTCOME FROM FUNCTION INTO UNORDERED LIST
-  this.render = function() {
-    this.calcCookiesEachHour();
+// USE PREV FUNCTION OUTPUT TO CALC # OF COOKIES SOLD EACH HOUR; USE .CEIL TO ROUND UP FOR WHOLE COOKIES
+Location.prototype.render = function() {
+  var trName = document.createElement('tr');
+  var tdLocation = document.createElement('td');
+  tdLocation.textContent = this.locationName;
+  trName.appendChild(tdLocation);
+  for (var i = 0; i < this.averageCookiesPerHour.length; i++) {
+    var tdCell = document.createElement('td');
+    tdCell.textContent = this.averageCookiesPerHour[i];
+    trName.appendChild(tdCell);
   };
-
-  this.render();
+  var tdTotal = document.createElement('td');
+  tdTotal.textContent = this.totalCookiesPerDay;
+  trName.appendChild(tdTotal);
+  salmonTable.appendChild(trName);
+};
 
 //STORE LOCATIONS
 var firstAndPike = new Location('1st and Pike','23','65','6.3');
@@ -63,55 +71,124 @@ for (var i = 0; i < allLocations.length; i++) {
   console.log(allLocations[i].locationName);
 };
 
-console.log(firstAndPike);
-console.log(seaTac);
-console.log(seattleCenter);
-console.log(capitalHill);
-console.log(alki);
+// console.log(firstAndPike);
+// console.log(seaTac);
+// console.log(seattleCenter);
+// console.log(capitalHill);
+// console.log(alki);
 
 function dataInput(event) {
   event.preventDefault();
   console.log('Form button was clicked.');
 
-  if (!event.target.storeName.value || !event.target.minCustPerHour.value || !event.target.maxCustPerHour.value || !event.target.avgCookiesPerCust.value) {
+  if (!event.target.storeNameForm.value ||
+    !event.target.minCustForm.value ||
+    !event.target.maxCustForm.value ||
+    !event.target.avgCookieForm.value) {
     return alert('Fields cannot be empty!');
   }
 
-  for (i = 0; i < allLocations.length; i++)
-    if () {
-  var storeName = event.target.storeName.value;
-  console.log('Is this working? ' + storeName);
-  var minCustPerHour = parseInt(event.target.minCustPerHour.value);
+  // for (i = 0; i < allLocations.length; i++)
+  //   if () {
+  var locationName = event.target.storeNameForm.value;
+  console.log('Is this working? ' + locationName);
+  var minCustPerHour = parseInt(event.target.minCustForm.value);
   console.log(typeof(minCustPerHour));
   console.log('Is this working? ' + minCustPerHour);
-  var maxCustPerHour = parseInt(event.target.maxCustPerHour.value);
+  var maxCustPerHour = parseInt(event.target.maxCustForm.value);
   console.log('Is this working? ' + maxCustPerHour);
-  var avgCookiesPerCust = parseInt(event.target.avgCookiesPerCust.value);
+  var avgCookiesPerCust = parseInt(event.target.avgCookieForm.value);
   console.log('Is this working? ' + avgCookiesPerCust);
-    }
-      else if {
-    }
+  //   }
+  //     else if {
+  //   }
 
   function clearTable() {
-    locationTable.innerHTML = '';
+    salmonTable.innerHTML = '';
     console.log('You just cleared the table!');
   };
   clearTable();
 
-  var newStore = new Store(storeName, minCustPerHour, maxCustPerHour, avgCookiesPerCust);
+  var newStore = new Location(locationName, minCustPerHour, maxCustPerHour, avgCookiesPerCust);
   // console.log('Is this working well? ' + event.target.newStore.value);
-
-  event.target.storeName.value = null;
-  event.target.minCustPerHour.value = null;
-  event.target.maxCustPerHour.value = null;
-  event.target.avgCookiesPerCust.value = null;
-
   makeHeaderRow();
   renderAllStores();
   makeFooterRow();
+  event.target.storeNameForm.value = null;
+  event.target.minCustForm.value = null;
+  event.target.maxCustForm.value = null;
+  event.target.avgCookieForm.value = null;
 }
 
-allLocations.push(newStore);
+makeHeaderRow();
+renderAllStores();
+makeFooterRow();
+
+// allLocations.push(newStore);
+
+// //HEADER ROW
+// function makeHeaderRow() { //eslint-disable-line
+//   var tableRow = document.createElement('tr');
+//   var thElement = document.createElement('th');
+//   thElement.textContent = null;
+//   salmonTable.appendChild(tableRow);
+//   tableRow.appendChild(thElement);
+//   for (var i = 0; i < hours.length; i++) {
+//     thElement = document.createElement('th');
+//     thElement.textContent = hours[i];
+//     tableRow.appendChild(thElement);
+//   }
+//   thElement = document.createElement('th');
+//   thElement.textContent = 'Location Total';
+//   tableRow.appendChild(thElement);
+//   console.log(salmonTable);
+//   salmonTable.appendChild(tableRow);
+// };
+//
+// //RENDER
+// function renderAllStores() { //eslint-disable-line
+//   for (var i = 0; i < allLocations.length; i++) {
+//     allLocations[i].render();
+//   }
+// };
+
+// //MAKE ALL TIMES COLUMNS
+// function makeAllTimesColumns() {
+//   var tableRow = document.createElement('tr');
+//
+// //MAKING EMPTY CELL FOR  1ST COLUMN
+//   tableRow.appendChild(document.createElement('td'));
+//
+//   for (var i=0; i < hours.length; i++){
+//     var tdElement = document.createElement('td');
+//     tdElement.textContent = hours[i];
+// //APPEND TD ELEMENT
+//     tableRow.appendChild(tdElement);
+//     }
+// //APPEND TO TABLE ROW
+//   locationTable.appendChild(tableRow);
+// }
+//
+// //FINAL FUNCTION TO MAKE ALL LOCATIONS ROWS
+// function makeAllLocationRows() {
+// //FOR LOOP
+//   for (var location = 0; location < allLocations.length; location++) {
+//     var tableRow = document.createElement('tr');
+//
+//     var tdElement = document.createElement('td');
+//     tdElement.textContent = allLocations[location].locationName;
+// //APPEND TO TD ELEMENT
+//     tableRow.appendChild(tdElement);
+// //FOR LOOP
+//     for (var i = 0; i < allLocations[location].cookiesEachHourArray.length; i++) {
+//       var listElement = document.createElement('td');
+//       listElement.textContent = allLocations[location].cookiesEachHourArray[i];
+//       tableRow.appendChild(listElement);
+//     }
+// //APPEND TO TABLE ROW
+//     locationTable.appendChild(tableRow);
+//   }
+// };
 
 //HEADER ROW
 function makeHeaderRow() { //eslint-disable-line
@@ -134,46 +211,8 @@ function makeHeaderRow() { //eslint-disable-line
 
 //RENDER
 function renderAllStores() { //eslint-disable-line
-  for (var i = 0; i < storeLocations.length; i++) {
-    storeLocations[i].render();
-  }
-};
-
-//MAKE ALL TIMES COLUMNS
-function makeAllTimesColumns() {
-  var tableRow = document.createElement('tr');
-
-//MAKING EMPTY CELL FOR  1ST COLUMN
-  tableRow.appendChild(document.createElement('td'));
-
-  for (var i=0; i < hours.length; i++){
-    var tdElement = document.createElement('td');
-    tdElement.textContent = hours[i];
-//APPEND TD ELEMENT
-    tableRow.appendChild(tdElement);
-    }
-//APPEND TO TABLE ROW
-  locationTable.appendChild(tableRow);
-}
-
-//FINAL FUNCTION TO MAKE ALL LOCATIONS ROWS
-function makeAllLocationRows() {
-//FOR LOOP
-  for (var location = 0; location < allLocations.length; location++) {
-    var tableRow = document.createElement('tr');
-
-    var tdElement = document.createElement('td');
-    tdElement.textContent = allLocations[location].locationName;
-//APPEND TO TD ELEMENT
-    tableRow.appendChild(tdElement);
-//FOR LOOP
-    for (var i = 0; i < allLocations[location].cookiesEachHourArray.length; i++) {
-      var listElement = document.createElement('td');
-      listElement.textContent = allLocations[location].cookiesEachHourArray[i];
-      tableRow.appendChild(listElement);
-    }
-//APPEND TO TABLE ROW
-    locationTable.appendChild(tableRow);
+  for (var i = 0; i < allLocations.length; i++) {
+    allLocations[i].render();
   }
 };
 
@@ -185,9 +224,9 @@ function makeFooterRow() { //eslint-disable-line
   var bigTotal = 0;
   for (var i = 0; i < hours.length; i++) {
     var hourlyTotal = 0;
-    for (var j = 0; j < storeLocations.length; j++) {
-      hourlyTotal = hourlyTotal + storeLocations[j].averageCookiesPerHour[i];
-      bigTotal += storeLocations[j].averageCookiesPerHour[i];
+    for (var j = 0; j < allLocations.length; j++) {
+      hourlyTotal = hourlyTotal + allLocations[j].averageCookiesPerHour[i];
+      bigTotal += allLocations[j].averageCookiesPerHour[i];
       console.log(bigTotal);
     }
     var tdElement = document.createElement('td');
@@ -200,9 +239,10 @@ function makeFooterRow() { //eslint-disable-line
 }
 
 //CALLING COLUMNS AND ROWS
-makeAllTimesColumns();
-makeAllLocationRows();
-makeTotalRows();
+////////makeAllTimesColumns();
+///////makeAllLocationRows();
+///////makeTotalRows();
 
 //ADD EVENT LISTENER
+var salesInput = document.getElementById('salesInput');
 salesInput.addEventListener('submit', dataInput); //eslint-disable-line
