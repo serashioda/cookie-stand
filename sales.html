@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Sales Pages</title>
-  <link rel="stylesheet" type="text/css" href="style.css" />
-</head>
+  <head>
+    <title>Sales Pages</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+
   <body id="sales">
     <h1 id= "projected">Daily Projected Sales</h1>
     <table id="locationjs"></table>
+
+    <form id="salesInput">
+      <fieldset>
+        <legend>Store Sales Input</legend>
+        <label class= "nameInput">Name: <input name="storeNameForm" type="text" /></label>
+        <label> Min. Customers:  <input name="minCustForm" type="text"/></label>
+        <label> Max. Customers: <input name="maxCustForm" type="text"/></label>
+        <label> Avg. Sales: <input name="avgCookieForm" type="text"/></label>
+        <button type="submit" name="submit"> Submit Data </submit>
+      </fieldset>
+    </form>
     <script src="app.js"></script>
+
   </body>
 </html>
+
+  <!-- <button id="clear-chat-list">Clear all comments!</button>
+
+<div>
+
+</div>
+
+  <ul id="chat-list"></ul> -->
+
+  <!-- <script src="chat.js"></script> -->
