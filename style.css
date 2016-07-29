@@ -11,10 +11,37 @@ th {
 	background-color: navy;
 	color: white;
 }
+
 h1 {
   font-family: 'Tangerine', serif;
   font-weight: bolder;
   color: #F44336;
+}
+
+#salmon {
+    padding-left: 0%;
+    padding-bottom: 10%;
+    width: auto;
+    height: auto;
+    opacity: 0.6;
+}
+
+#store {
+  position: relative;
+  background: #5C97FF;
+  overflow: hidden;
+  font-family: 'Tangerine', serif;
+  font-weight: bolder;
+  font-size: 50px;
+  color: #F44336;
+  float: top-right;
+  max-width: 750px;
+  height: 0 auto;
+  margin-left: 400px;
+  border: 5px solid black;
+  border-radius: 250px;
+  background-color: #F0F4C3;
+  text-align: center;
 }
 
 #storeloc {
@@ -30,27 +57,38 @@ h1 {
   border-radius: 15px;
 }
 
-#store {
-  font-family: 'Tangerine', serif;
-  font-weight: bolder;
-  font-size: 50px;
-  color: #F44336;
-  float: top-right;
-  max-width: 750px;
-  height: 0 auto;
-  margin-left: 400px;
-  border: 5px solid black;
-  border-radius: 25px;
-  background-color: #F0F4C3;
-  text-align: center;
-}
 
-img {
+/* img {
   max-width: 750px;
   max-height: 350px;
   margin-left: 20%;
   margin-bottom: 5%;
+  background: #e3e3e3;
+  padding: 50px 0;
+  position: relative;
+  background: #5C97FF;
+  overflow: hidden;
+} */
+/* .my-container h1 {
+  padding: 50px;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+  color: #fff;
 }
+.my-container img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    opacity: 0.6;
+}
+article {
+  background: #fff;
+  padding: 15px;
+} */
 
 #footer {
   font-weight: lighter;
@@ -99,4 +137,30 @@ color: #B2DFDB;
 
 body {
   background-color: #F3E5F5;
+	background-image: url("image/family.jpg");
+	opacity: 0.6;
 }
+
+sal
+
+/* body {
+  background: #e3e3e3;
+  padding: 50px 0;
+} */
+/* .my-container {
+    position: relative;
+    background: #5C97FF;
+    overflow: hidden;
+}
+.my-container h1 {
+    padding: 50px;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    color: #fff;
+}
+
+article {
+  background: #fff;
+  padding: 15px;
+} */
