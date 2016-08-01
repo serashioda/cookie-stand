@@ -23,7 +23,7 @@ h1 {
     padding-bottom: 10%;
     width: auto;
     height: auto;
-    opacity: 0.6;
+    opacity: 0.9;
 }
 
 #store {
@@ -138,6 +138,7 @@ color: #B2DFDB;
 body {
   background-color: #F3E5F5;
 	background-image: url("image/family.jpg");
+	background-repeat: none;
 	opacity: 0.6;
 }
 
