@@ -18,6 +18,21 @@ h1 {
   color: #F44336;
 }
 
+body {
+	opacity: 0.8;
+	background-color: #F3E5F5;
+	font-family: Verdana, serif, sans-serif;
+	font-weight: bold;
+}
+
+#storePage {
+background-image: url("image/family.jpg");
+background-repeat: no-repeat;
+background-size: contain;
+background-position: bottom;
+
+}
+
 #salmon {
     padding-left: 0%;
     padding-bottom: 10%;
@@ -57,39 +72,6 @@ h1 {
   border-radius: 15px;
 }
 
-
-/* img {
-  max-width: 750px;
-  max-height: 350px;
-  margin-left: 20%;
-  margin-bottom: 5%;
-  background: #e3e3e3;
-  padding: 50px 0;
-  position: relative;
-  background: #5C97FF;
-  overflow: hidden;
-} */
-/* .my-container h1 {
-  padding: 50px;
-  text-align: center;
-  z-index: 2;
-  position: relative;
-  color: #fff;
-}
-.my-container img {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: auto;
-    z-index: 1;
-    opacity: 0.6;
-}
-article {
-  background: #fff;
-  padding: 15px;
-} */
-
 #footer {
   font-weight: lighter;
   font-size: 15px;
@@ -103,6 +85,8 @@ article {
   margin: 0 auto;
   background-color: #0097A7;
   text-align: center;
+	font-family: Verdana, serif, sans-serif;
+	font-weight: bold;
 }
 
 #sales {
@@ -113,16 +97,17 @@ article {
   font-size: 10px;
   color: #E57373;
 }
-#locationjs {
-  font-family: Helvetica, sans-serif, serif;
-  color: blue;
-}
 
 #projected {
   font-family: Courier, Times, serif;
-  font-size: 50px;
+  font-size: 26px;
   font-weight: bold;
   color: blue;
+}
+
+#locationjs {
+	font-family: Helvetica, sans-serif, serif;
+	color: blue;
 }
 
 .render {
@@ -130,38 +115,70 @@ article {
    font-weight: bold;
 }
 
-/*p {
-font-family: Helvetica, sans-serif, serif;
-color: #B2DFDB;
-}*/
-
-body {
-  background-color: #F3E5F5;
-	background-image: url("image/family.jpg");
-	background-repeat: none;
-	opacity: 0.6;
+#aboutUsOne {
+	font-family: 'Alegreya Sans', sans-serif;
+	font-weight: bolder;
+	color: black;
+	background-color: grey;
+	column-count: 2;
+  column-gap: 0.2em;
+  margin-bottom: 2px;
+	max-height: 40%;
 }
 
-sal
+#aboutUsTwo {
+	font-family: 'Alegreya Sans', sans-serif;
+  color: black;
+  background-color: grey;
+  column-count: 2;
+  column-gap: 0.2em;
+  margin-top: 1%;
+	padding-left: 10%;
+ }
 
-/* body {
-  background: #e3e3e3;
-  padding: 50px 0;
-} */
-/* .my-container {
-    position: relative;
-    background: #5C97FF;
-    overflow: hidden;
-}
-.my-container h1 {
-    padding: 50px;
-    text-align: center;
-    z-index: 2;
-    position: relative;
-    color: #fff;
+#aboutUsThree {
+ 	font-family: 'Alegreya Sans', sans-serif;
+ 	font-weight: bolder;
+ 	color: black;
+ 	background-color: grey;
+ 	column-count: 2;
+ 	column-gap: 0.2em;
+ 	margin-top: 1%;
+ 	max-height: 27.5%;
+ }
+
+#aboutUsFour {
+	font-family: 'Alegreya Sans', sans-serif;
+	color: black;
+	background-color: grey;
+	column-count: 3;
+	column-gap: 0.1em;
+	margin-top: 1%;
+	padding-top: 5%;
+	padding-left: 10%;
+	max-height: 50%;
 }
 
-article {
-  background: #fff;
-  padding: 15px;
-} */
+.mission{
+	padding-top: 5%;
+	padding-right: 25%;
+	padding-bottom: 2%;
+}
+
+.chinook{
+	padding-left: 15%;
+	max-height: 265px;
+	text-align: center-left;
+}
+
+.frosted{
+	padding-top: 5%;
+	padding-right: 25%;
+}
+
+.retail{
+	padding-top: 45%;
+	padding-left: 15%;
+	max-height: 245px;
+	text-align: center-left;
+}
